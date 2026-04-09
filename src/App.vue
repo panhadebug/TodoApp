@@ -3,8 +3,8 @@
     <h1>TODO APP</h1>
 
     <button @click="darkMode = !darkMode">
-  {{ darkMode ? '☀ Light Mode' : '🌙 Dark Mode' }}
-</button>
+      {{ darkMode ? "☀ Light Mode" : "🌙 Dark Mode" }}
+    </button>
 
     <TodoInput @add="addTask" />
 
@@ -100,10 +100,10 @@ body {
 div {
   max-width: 420px;
   margin: 50px auto;
-  background: white;
+  background: rgb(255, 255, 255);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 
@@ -113,12 +113,14 @@ div {
   color: white;
 }
 
+
 .dark div {
   background: #2a2a40;
 }
 
 /* Title */
 h1 {
+  color: rgb(115, 195, 195);
   text-align: center;
   margin-bottom: 20px;
 }
@@ -168,6 +170,21 @@ li:hover {
 /* Dark task */
 .dark li {
   background: #3a3a55;
+}
+/* Fade + slide animation */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
 }
 span {
   display: inline-block;
